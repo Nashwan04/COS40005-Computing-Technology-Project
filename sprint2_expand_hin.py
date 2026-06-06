@@ -3,10 +3,10 @@ import csv
 import os
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-BUSINESS_FILE = r"C:\Users\jacob\Downloads\p88\Yelp JSON\yelp_dataset\yelp_academic_dataset_business.json"
-REVIEW_FILE   = r"C:\Users\jacob\Downloads\p88\Yelp JSON\yelp_dataset\yelp_academic_dataset_review.json"
-USER_FILE     = r"C:\Users\jacob\Downloads\p88\Yelp JSON\yelp_dataset\yelp_academic_dataset_user.json"
-OUTPUT_DIR    = r"C:\Users\jacob\Downloads\p88\Yelp JSON\output"
+BUSINESS_FILE = r"D:\Uni Work\projectp88\Yelp JSON\yelp_academic_dataset_business.json"
+REVIEW_FILE   = r"D:\Uni Work\projectp88\Yelp JSON\yelp_academic_dataset_review.json"
+USER_FILE     = r"D:\Uni Work\projectp88\Yelp JSON\yelp_academic_dataset_user.json"
+OUTPUT_DIR    = r"D:\Uni Work\projectp88\Yelp JSON\output"
 LIMIT         = 1000
 # ─────────────────────────────────────────────────────────────────────────────
 

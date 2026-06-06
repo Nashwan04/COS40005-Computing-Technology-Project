@@ -1,0 +1,73 @@
+{
+  "node_types": {
+    "Business": {
+      "source_file": "yelp_academic_dataset_business.json",
+      "id_field": "business_id",
+      "fields": ["name", "city", "state", "stars"]
+    },
+    "User": {
+      "source_file": "yelp_academic_dataset_user.json",
+      "id_field": "user_id",
+      "fields": ["name", "review_count", "average_stars"]
+    },
+    "Review": {
+      "source_file": "yelp_academic_dataset_review.json",
+      "id_field": "review_id",
+      "fields": ["user_id", "business_id", "stars", "date"]
+    },
+    "Category": {
+      "source_file": "yelp_academic_dataset_business.json",
+      "field": "categories"
+    },
+    "City": {
+      "source_file": "yelp_academic_dataset_business.json",
+      "field": "city"
+    },
+    "State": {
+      "source_file": "yelp_academic_dataset_business.json",
+      "field": "state"
+    }
+  },
+  "relationship_types": [
+    {
+      "source_node": "User",
+      "relationship": "WROTE",
+      "target_node": "Review",
+      "source_field": "user_id",
+      "target_field": "review_id",
+      "from_file": "review.json"
+    },
+    {
+      "source_node": "Review",
+      "relationship": "REVIEWS",
+      "target_node": "Business",
+      "source_field": "review_id",
+      "target_field": "business_id",
+      "from_file": "review.json"
+    },
+    {
+      "source_node": "Business",
+      "relationship": "IN_CATEGORY",
+      "target_node": "Category",
+      "source_field": "business_id",
+      "target_field": "categories",
+      "from_file": "business.json"
+    },
+    {
+      "source_node": "Business",
+      "relationship": "LOCATED_IN",
+      "target_node": "City",
+      "source_field": "business_id",
+      "target_field": "city",
+      "from_file": "business.json"
+    },
+    {
+      "source_node": "City",
+      "relationship": "IN_STATE",
+      "target_node": "State",
+      "source_field": "city",
+      "target_field": "state",
+      "from_file": "business.json"
+    }
+  ]
+}
