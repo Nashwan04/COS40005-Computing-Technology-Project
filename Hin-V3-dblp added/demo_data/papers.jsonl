@@ -1,0 +1,4 @@
+{"paper_id":"P1","title":"Graph Basics","year":2024,"author_ids":["A1"],"venue_id":"V1"}
+{"paper_id":"P2","title":"Shared Papers","year":2025,"author_ids":["A1","A2"],"venue_id":"V1"}
+{"paper_id":"P3","title":"HIN Methods","year":2025,"author_ids":["A1","A2"],"venue_id":"V2"}
+{"paper_id":"P4","title":"Graph Storage","year":2026,"author_ids":["A2"],"venue_id":"V2"}

@@ -1,0 +1,104 @@
+{
+  "description": "Two reviews pointing to the same business; their raw Yelp references checked.",
+  "shared_business": "Business:demo_b1",
+  "total_reviews_for_shared_business": 2,
+  "raw_reference_checks_pass": true,
+  "nodes": [
+    {
+      "id": "Business:demo_b1",
+      "type": "Business",
+      "source_id": "demo_b1",
+      "attributes": {
+        "name": "SYNTHETIC Business 1",
+        "city": "Melbourne",
+        "state": "VIC",
+        "categories": "Demo",
+        "stars": 4.5
+      }
+    },
+    {
+      "id": "Review:demo_r1",
+      "type": "Review",
+      "source_id": "demo_r1",
+      "attributes": {
+        "stars": 5,
+        "date": "2026-01-01",
+        "text": "SYNTHETIC demo review"
+      }
+    },
+    {
+      "id": "Review:demo_r2",
+      "type": "Review",
+      "source_id": "demo_r2",
+      "attributes": {
+        "stars": 4,
+        "date": "2026-01-02",
+        "text": "SYNTHETIC demo review"
+      }
+    },
+    {
+      "id": "User:demo_u1",
+      "type": "User",
+      "source_id": "demo_u1",
+      "attributes": {
+        "name": "SYNTHETIC User 1",
+        "review_count": 2
+      }
+    },
+    {
+      "id": "User:demo_u2",
+      "type": "User",
+      "source_id": "demo_u2",
+      "attributes": {
+        "name": "SYNTHETIC User 2",
+        "review_count": 1
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "Review:demo_r1",
+      "target": "User:demo_u1",
+      "relation": "AUTHORED_BY",
+      "evidence": {
+        "source_type": "Review",
+        "source_id": "demo_r1",
+        "reference_field": "user_id",
+        "reference_value": "demo_u1"
+      }
+    },
+    {
+      "source": "Review:demo_r1",
+      "target": "Business:demo_b1",
+      "relation": "ABOUT",
+      "evidence": {
+        "source_type": "Review",
+        "source_id": "demo_r1",
+        "reference_field": "business_id",
+        "reference_value": "demo_b1"
+      }
+    },
+    {
+      "source": "Review:demo_r2",
+      "target": "User:demo_u2",
+      "relation": "AUTHORED_BY",
+      "evidence": {
+        "source_type": "Review",
+        "source_id": "demo_r2",
+        "reference_field": "user_id",
+        "reference_value": "demo_u2"
+      }
+    },
+    {
+      "source": "Review:demo_r2",
+      "target": "Business:demo_b1",
+      "relation": "ABOUT",
+      "evidence": {
+        "source_type": "Review",
+        "source_id": "demo_r2",
+        "reference_field": "business_id",
+        "reference_value": "demo_b1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Do not upload multi-GB datasets, private copies, generated evidence, or local results
+/yelp_dataset/
+/dblp_raw/
+/dblp_normalized/
+/demo_data/dblp_large/
+/outputs/
+/exports/
+/hin_yelp_v2.json
+/hin_yelp_small.json
+/demo_graph.json
+/client_demo_graph.html
+/client_demo_subgraph.json
+*.zip
+__pycache__/
+*.pyc

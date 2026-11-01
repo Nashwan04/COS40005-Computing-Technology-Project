@@ -1,0 +1,25 @@
+{
+  "dataset": "DBLP-style LARGE SYNTHETIC scalability test (NOT real DBLP)",
+  "primary_entity": "Paper",
+  "primary_records_sampled": 5000,
+  "node_count": 5466,
+  "edge_count": 19999,
+  "node_types": {
+    "Paper": 5000,
+    "Author": 416,
+    "Venue": 50
+  },
+  "relation_types": {
+    "AUTHORED_BY": 10000,
+    "PUBLISHED_IN": 5000,
+    "CITES": 4999
+  },
+  "validation": {
+    "no_dangling_edges": true,
+    "unique_node_ids": true,
+    "typed_nodes": true,
+    "declared_relations": true
+  },
+  "warnings": {}
+}
+Saved: outputs/dblp_synthetic_5000.json

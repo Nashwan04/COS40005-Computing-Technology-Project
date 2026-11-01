@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><title>P88 HIN proof</title>
+<style>body{font:16px system-ui;margin:24px;background:#f8fafc;color:#0f172a}
+section{max-width:980px;margin:auto;background:white;border:1px solid #cbd5e1;border-radius:16px;padding:26px}
+svg{width:100%;height:auto}p{line-height:1.5}</style></head><body><section>
+<h1>P88 HIN: Two reviews share one Business</h1>
+<p>Each Review is stored once. Both reviews point to the same Business node. Hover a node to see its full ID.</p>
+<svg viewBox="0 0 900 340" role="img" aria-label="Two different Reviews each link to a User, and both link to the same Business">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 Z" fill="#64748b"/></marker></defs>
+<g stroke="#64748b" stroke-width="2.2" fill="none" marker-end="url(#arr)">
+<path d="M330 86 L260 86"/><path d="M330 240 L260 240"/>
+<path d="M570 86 L650 158"/><path d="M570 240 L650 190"/>
+</g>
+<rect x="20" y="55" width="240" height="62" rx="12" fill="#2563eb"/><text x="140" y="91" text-anchor="middle" font-size="17" fill="white">User:demo_u1</text><title>User:demo_u1</title>
+<rect x="20" y="209" width="240" height="62" rx="12" fill="#2563eb"/><text x="140" y="245" text-anchor="middle" font-size="17" fill="white">User:demo_u2</text><title>User:demo_u2</title>
+<rect x="330" y="55" width="240" height="62" rx="12" fill="#0d9488"/><text x="450" y="91" text-anchor="middle" font-size="17" fill="white">Review:demo_r1</text><title>Review:demo_r1</title>
+<rect x="330" y="209" width="240" height="62" rx="12" fill="#0d9488"/><text x="450" y="245" text-anchor="middle" font-size="17" fill="white">Review:demo_r2</text><title>Review:demo_r2</title>
+<rect x="650" y="143" width="240" height="62" rx="12" fill="#7c3aed"/><text x="770" y="179" text-anchor="middle" font-size="17" fill="white">Business:demo_b1</text><title>Business:demo_b1</title>
+<g font-size="12" fill="#334155"><text x="278" y="74">AUTHORED_BY</text><text x="278" y="228">AUTHORED_BY</text><text x="583" y="105">ABOUT</text><text x="583" y="231">ABOUT</text></g>
+</svg>
+<h2>Raw JSON verification: PASS</h2>
+<p>Both Review → User and Review → Business edges were compared against actual <code>user_id</code> and <code>business_id</code> values in the raw Yelp review records.</p>
+<p><strong>Note:</strong> This verifies two example edges, not every relationship in the complete dataset.</p>
+</section></body></html>

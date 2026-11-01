@@ -1,0 +1,4 @@
+{"id":"paper01","title":"Graph Fundamentals","year":2024,"authors":[{"id":"author01","name":"Example A"},{"id":"author02","name":"Example B"}],"venue":{"id":"venue01","raw":"Example Conference One"},"references":[]}
+{"id":"paper02","title":"Networks and Links","year":2025,"authors":[{"id":"author02","name":"Example B"},{"id":"author03","name":"Example C"}],"venue":{"id":"venue01","raw":"Example Conference One"},"references":["paper01"]}
+{"id":"paper03","title":"Typed Edges for Graphs","year":2025,"authors":[{"id":"author01","name":"Example A"},{"id":"author03","name":"Example C"}],"venue":{"id":"venue02","raw":"Example Conference Two"},"references":["paper01","paper02"]}
+{"id":"paper04","title":"Schema Driven Conversion","year":2026,"authors":[{"id":"author01","name":"Example A"},{"id":"author02","name":"Example B"}],"venue":{"id":"venue02","raw":"Example Conference Two"},"references":["paper03"]}

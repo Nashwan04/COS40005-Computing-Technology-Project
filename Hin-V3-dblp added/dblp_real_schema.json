@@ -1,0 +1,14 @@
+{
+  "name": "AMiner DBLP V11/V13 prepared sample",
+  "primary": "Paper",
+  "entities": {
+    "Paper": {"file": "dblp_normalized/papers.jsonl", "id": "paper_id", "attributes": ["title", "year"]},
+    "Author": {"file": "dblp_normalized/authors.jsonl", "id": "author_id", "attributes": ["name"]},
+    "Venue": {"file": "dblp_normalized/venues.jsonl", "id": "venue_id", "attributes": ["name"]}
+  },
+  "relationships": [
+    {"from": "Paper", "field": "author_ids", "to": "Author", "type": "AUTHORED_BY"},
+    {"from": "Paper", "field": "venue_id", "to": "Venue", "type": "PUBLISHED_IN"},
+    {"from": "Paper", "field": "reference_ids", "to": "Paper", "type": "CITES"}
+  ]
+}

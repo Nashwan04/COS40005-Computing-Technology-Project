@@ -1,0 +1,62 @@
+P88 FINAL DEMO — QUICK START (WINDOWS / VS CODE)
+================================================
+
+1. Extract P88_Final_Demo_Package.zip into your existing P88 folder.
+   The result should be: P88/P88_Final_Demo_Package/hin_v2.py
+   Keep your real huge P88/yelp_dataset folder where it is. Do not move it.
+
+2. In VS Code: File > Open Folder > P88_Final_Demo_Package
+   Terminal > New Terminal. Run: python --version
+   If python is not recognized on Windows, use py instead of python below.
+
+A. Guaranteed offline demo — 4 SYNTHETIC DBLP-style papers:
+   python hin_v2.py --schema dblp_schema_example.json --output outputs/dblp_small.json
+   python tools/verify_edges.py --schema dblp_schema_example.json --graph outputs/dblp_small.json
+   python tools/visualize_shared.py --graph outputs/dblp_small.json --relation AUTHORED_BY --target-type Author --output outputs/dblp_small_graph.html
+   Open outputs/dblp_small_graph.html in Chrome.
+   Expected: 8 nodes, 10 edges; verifier PASS.
+
+B. Guaranteed offline demo — 3 SYNTHETIC Yelp-format reviews:
+   python hin_v2.py --schema yelp_tiny_schema.json --data-root demo_data/yelp_tiny --output outputs/yelp_tiny.json
+   python p88_client_demo.py --graph outputs/yelp_tiny.json --raw demo_data/yelp_tiny/yelp_dataset/yelp_academic_dataset_review.json --output outputs/yelp_tiny_proof.json
+   Open outputs/client_demo_graph.html in Chrome.
+   Expected: 7 nodes, 6 edges; two Reviews point to one Business.
+
+C. REAL YELP — run this if your big source files are in P88/yelp_dataset:
+   python hin_v2.py --schema yelp_schema_v2.json --data-root .. --limit 5000 --output outputs/yelp_5000.json
+   python tools/verify_edges.py --schema yelp_schema_v2.json --data-root .. --graph outputs/yelp_5000.json
+   python p88_client_demo.py --graph outputs/yelp_5000.json --raw ../yelp_dataset/yelp_academic_dataset_review.json --output outputs/yelp_shared_business.json
+   Open outputs/client_demo_graph.html and view results in terminal.
+   Prior local run: 12,506 nodes, 10,000 edges. Confirm on YOUR run.
+
+D. LARGE SYNTHETIC DBLP — 5,000 papers (NOT REAL DBLP):
+   python tools/make_synthetic_dblp.py --papers 5000
+   python hin_v2.py --schema dblp_synthetic_large_schema.json --output outputs/dblp_synthetic_5000.json
+   python tools/verify_edges.py --schema dblp_synthetic_large_schema.json --graph outputs/dblp_synthetic_5000.json
+   Expected: 5,466 nodes, 19,999 edges, verifier PASS.
+
+E. REAL DBLP (requires external download of AMiner V11/V13 JSON):
+   Official info: https://www.aminer.cn/aboutus/en-US/articles/655db2202ab17a072284bc0c
+   Put raw file at ../dblp_raw/dblp.v13.json, or edit --input path below.
+   python tools/normalize_dblp.py --input ../dblp_raw/dblp.v13.json --limit 5000
+   python tools/verify_dblp_raw.py --input ../dblp_raw/dblp.v13.json
+   python hin_v2.py --schema dblp_real_schema.json --limit 50 --output outputs/dblp_real_50.json
+   python hin_v2.py --schema dblp_real_schema.json --limit 5000 --output outputs/dblp_real_5000.json
+   python tools/verify_edges.py --schema dblp_real_schema.json --graph outputs/dblp_real_5000.json
+   Real DBLP was NOT downloaded or tested in this distributed package. Read README.md.
+
+F. Run unit tests:
+   python -m unittest discover -s tests -v
+
+G. Show a GRAPHML/CSV export of a generated graph:
+   python tools/export_graph.py --graph outputs/dblp_small.json --outdir outputs/dblp_small_exports
+
+READ NEXT:
+- docs/PSEUDOCODE.md: professor-facing algorithm, source -> schema -> HIN.
+- docs/FINAL_DEMO_PLAN.md: speaker plan and supervisor/client Q&A.
+- P88_Final_Client_Demo.pptx: editable 12-slide client presentation.
+- README.md: all commands, folder arrangements, proof limitations.
+
+IMPORTANT: The schema is manually supplied; XML/RDF import, schema inference,
+CSR, real DBLP full-format support are NOT proven. Never claim synthetic
+fixtures are real Yelp/DBLP samples.

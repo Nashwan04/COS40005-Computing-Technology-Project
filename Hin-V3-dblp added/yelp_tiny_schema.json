@@ -1,0 +1,48 @@
+{
+  "name": "Yelp-format SYNTHETIC teaching fixture (NOT the real Yelp dataset)",
+  "primary": "Review",
+  "entities": {
+    "Review": {
+      "file": "yelp_dataset/yelp_academic_dataset_review.json",
+      "id": "review_id",
+      "attributes": [
+        "stars",
+        "date",
+        "text"
+      ]
+    },
+    "User": {
+      "file": "yelp_dataset/yelp_academic_dataset_user.json",
+      "id": "user_id",
+      "attributes": [
+        "name",
+        "review_count"
+      ]
+    },
+    "Business": {
+      "file": "yelp_dataset/yelp_academic_dataset_business.json",
+      "id": "business_id",
+      "attributes": [
+        "name",
+        "city",
+        "state",
+        "categories",
+        "stars"
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "from": "Review",
+      "field": "user_id",
+      "to": "User",
+      "type": "AUTHORED_BY"
+    },
+    {
+      "from": "Review",
+      "field": "business_id",
+      "to": "Business",
+      "type": "ABOUT"
+    }
+  ]
+}

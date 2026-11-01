@@ -1,0 +1,10 @@
+{
+  "graph": "outputs/dblp_synthetic_5000.json",
+  "source_schema": "dblp_synthetic_large_schema.json",
+  "stored_edges": 19999,
+  "edges_matching_source_references": 19999,
+  "invalid_findings": 0,
+  "first_invalid_findings": [],
+  "passed": true,
+  "scope": "Every stored edge checked against its source reference; schema meaning and completeness outside the sampled graph are not proven."
+}

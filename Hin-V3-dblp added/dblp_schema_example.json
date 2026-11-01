@@ -1,0 +1,12 @@
+{
+  "name":"DBLP-style teaching example", "primary":"Paper",
+  "entities": {
+    "Paper":{"file":"demo_data/papers.jsonl","id":"paper_id","attributes":["title","year"]},
+    "Author":{"file":"demo_data/authors.jsonl","id":"author_id","attributes":["name"]},
+    "Venue":{"file":"demo_data/venues.jsonl","id":"venue_id","attributes":["name"]}
+  },
+  "relationships":[
+    {"from":"Paper","field":"author_ids","to":"Author","type":"AUTHORED_BY"},
+    {"from":"Paper","field":"venue_id","to":"Venue","type":"PUBLISHED_IN"}
+  ]
+}
